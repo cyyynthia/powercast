@@ -1,3 +1,3 @@
-# Croissant
+# Powercast
 
-Your message, but 1/4 of words is 'croissant'. Meme from the Powercast on Powercord
+The official plugin brought by the Powercord's podcast: Powercast.
