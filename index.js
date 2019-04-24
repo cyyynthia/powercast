@@ -21,7 +21,7 @@ module.exports = class Powercast extends Plugin {
     const ChannelItem = await getModuleByDisplayName('ChannelItem');
     inject('powercast-icon', ChannelItem.prototype, 'render', function (args, res) {
       if (this.props.channel.id === '570621003189714950') {
-        res.props['data-powercast'] = 'memes';
+        res.props['data-powercast'] = 'fuck me hard';
       }
       return res;
     });
