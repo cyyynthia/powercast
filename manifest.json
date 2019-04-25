@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "Your message, but 1/4 of words is 'croissant'",
   "author": "Bowser65",
-  "license": "AGPL-3.0"
+  "license": "AGPL-3.0",
+  "optionalDependencies": [
+    "pc-badges"
+  ]
 }

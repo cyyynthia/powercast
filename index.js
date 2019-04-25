@@ -1,6 +1,9 @@
 const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
 const { React, getModule, getModuleByDisplayName } = require('powercord/webpack');
+const Badge = require('./Badge');
+
+const POWERCASTERS = [ '94762492923748352', '190551803669118976', '132584525296435200' ];
 
 module.exports = class Powercast extends Plugin {
   async startPlugin () {
@@ -33,6 +36,29 @@ module.exports = class Powercast extends Plugin {
       }
       return res;
     });
+
+    try {
+      const Badges = require('../pc-badges/Badges');
+      inject('powercast-badges', Badges.prototype, 'render', function (_, res) {
+        if (POWERCASTERS.includes(this.props.id)) {
+          const badge = res.find(b => b);
+          if (!badge) {
+            return res;
+          }
+          return [
+            ...res.slice(0, 2),
+            React.createElement(Badge, {
+              key: 'fuck me hard',
+              ...badge.props
+            }, _this._renderIcon()),
+            ...res.slice(2)
+          ];
+        }
+        return res;
+      });
+    } catch (e) {
+      // big sad
+    }
   }
 
   _renderIcon (channelIconClass) {
@@ -59,5 +85,7 @@ module.exports = class Powercast extends Plugin {
   pluginWillUnload () {
     uninject('powercast-channel-icon');
     uninject('powercast-title-icon');
+    uninject('powercast-badges');
+    uninject('powercast-badge');
   }
 };
