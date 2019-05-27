@@ -41,7 +41,7 @@ module.exports = class Powercast extends Plugin {
       const Badges = require('../pc-badges/Badges');
       inject('powercast-badges', Badges.prototype, 'render', function (_, res) {
         if (POWERCASTERS.includes(this.props.id)) {
-          const badge = res.find(b => b);
+          const badge = res.find(b => b && !b.props.position);
           if (!badge) {
             return res;
           }
