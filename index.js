@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2020 Bowser65
+ * Licensed under the Open Software License version 3.0
+ */
+
 const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
 const { React, getModule, getModuleByDisplayName } = require('powercord/webpack');

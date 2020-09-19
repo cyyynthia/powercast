@@ -1,9 +1,9 @@
 {
-  "name": "Croissant",
+  "name": "Powercast",
   "version": "1.0.0",
-  "description": "Your message, but 1/4 of words is 'croissant'",
+  "description": "The official plugin brought by the Powercord's podcast: Powercast.",
   "author": "Bowser65",
-  "license": "AGPL-3.0",
+  "license": "OSL-3.0",
   "optionalDependencies": [
     "pc-badges"
   ]
